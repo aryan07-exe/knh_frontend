@@ -21,7 +21,7 @@ function Login() {
       if (response.ok) {
         alert("Login successful!");
         localStorage.setItem("token", data.token); // Store JWT token
-        navigate("/"); // Redirect to Landing page
+        navigate("/landing"); // Redirect to Landing page
       } else {
         alert(data.error || "Login failed.");
       }
