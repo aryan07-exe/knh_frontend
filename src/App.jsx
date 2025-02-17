@@ -6,6 +6,7 @@ import Landing from "./components/LandingPage";
 import ProductPage from "./components/Productpage";
 import Navbar from "./components/Navbar";
 import AddProduct from "./components/AddProduct";
+import NewLandingPage from "./components/NewLandingPage";
 // Add a Home page if needed
 
 
@@ -20,7 +21,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/navbar" element={<Navbar />} />
           <Route path="/product" element={<ProductPage />} />
-          <Route path="/add" element={<AddProduct />} />
+          <Route path="/add" element={<AddProduct />} />  
+          <Route path="/new" element={<NewLandingPage />} />  
         </Routes>
       </div>
     </Router>

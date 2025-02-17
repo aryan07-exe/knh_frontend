@@ -9,9 +9,9 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // Import your local images
-import hero1 from '../images/hero1.jpg';
-import hero2 from '../images/hero2.jpg';
-import hero3 from '../images/hero3.jpg';
+import hero1 from '../images/hero6.jpg';
+import hero2 from '../images/hero7.jpg';
+import hero3 from '../images/hero9.jpg';
 
 const HeroSection = ({ setShowVideo }) => {
   return (

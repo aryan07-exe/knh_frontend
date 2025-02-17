@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
-import { FaInstagram, FaTwitter, FaPinterest, FaPlay, FaArrowRight } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaPinterest, FaPlay, FaArrowRight, FaQuoteLeft } from "react-icons/fa";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -31,17 +31,30 @@ const LandingPage = () => {
       <Navbar />
       <HeroSection setShowVideo={setShowVideo} />
 
+      {/* Elegant Slogan Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-30"></div>
+        <FaQuoteLeft className="text-4xl text-purple-500 mx-auto mb-8 opacity-50" />
+        <h2 className="text-5xl font-extrabold text-white mb-6 tracking-wider">
+          Elegance in Every Stitch
+        </h2>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          Where timeless sophistication meets contemporary design. Each piece tells a story of craftsmanship and dedication.
+        </p>
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 opacity-30"></div>
+      </section>
+
       {/* Collection Preview */}
-      <section className="py-20 px-4 bg-gray-900">
+      <section className="py-24 px-4 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="text-3xl font-light text-white mb-4 tracking-wide">Latest Collection</h2>
-              <p className="text-gray-400">Discover our newest arrivals</p>
+              <h2 className="text-4xl font-light text-white mb-4 tracking-wider">Latest Collection</h2>
+              <p className="text-gray-400 text-lg">Discover our newest arrivals</p>
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="text-white flex items-center group"
+              className="text-white flex items-center group bg-purple-500/10 px-6 py-3 rounded-full"
             >
               View All 
               <FaArrowRight className="ml-2 transform transition-transform group-hover:translate-x-2" />
@@ -55,23 +68,23 @@ const LandingPage = () => {
                 whileHover={{ y: -10 }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden rounded-lg">
                   <img
                     src={image}
                     alt={`Collection item ${index + 1}`}
-                    className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="absolute bottom-4 left-4 right-4">
-                      <button className="w-full bg-white text-gray-900 py-3 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                      <button className="w-full bg-white/90 text-gray-900 py-3 rounded-full opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                         Quick View
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-white font-light">Luxury Item {index + 1}</h3>
-                  <p className="text-gray-400 mt-1">$299.99</p>
+                <div className="mt-6 text-center">
+                  <h3 className="text-white font-light text-lg">Luxury Item {index + 1}</h3>
+                  <p className="text-purple-400 mt-2 font-medium">$299.99</p>
                 </div>
               </motion.div>
             ))}
@@ -147,34 +160,77 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Custom-Made Designs Section */}
+      <section className="py-32 px-4 bg-gray-800 relative">
+        <div className="absolute inset-0 bg-[url('/path/to/pattern.png')] opacity-5"></div>
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <span className="text-purple-400 text-sm tracking-widest uppercase mb-4 block">Bespoke Fashion</span>
+          <h2 className="text-5xl font-extrabold text-white mb-8">Custom-Made Designs</h2>
+          <p className="text-gray-300 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+            Experience the luxury of bespoke fashion with our custom-made designs. Tailored to perfection, each piece is crafted to reflect your unique style.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-purple-500 text-white px-10 py-4 rounded-full hover:bg-purple-600 transition-colors flex items-center mx-auto group"
+          >
+            Begin Your Journey
+            <FaArrowRight className="ml-2 transform transition-transform group-hover:translate-x-2" />
+          </motion.button>
+        </div>
+      </section>
+
+      {/* Modern-Day Bridal Section */}
+      <section className="py-32 px-4 bg-gray-900 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center">
+          <span className="text-purple-400 text-sm tracking-widest uppercase mb-4 block">Bridal Collection</span>
+          <h2 className="text-5xl font-extrabold text-white mb-8">Modern-Day Bridal Dresses</h2>
+          <p className="text-gray-300 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+            Walk down the aisle in style with our exquisite collection of modern-day bridal dresses. Each dress is a masterpiece, designed for the contemporary bride.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-white text-gray-900 px-10 py-4 rounded-full hover:bg-gray-100 transition-colors flex items-center mx-auto group"
+          >
+            View Collection
+            <FaArrowRight className="ml-2 transform transition-transform group-hover:translate-x-2" />
+          </motion.button>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-black text-gray-400 py-20 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div>
-            <h1 className="text-2xl font-bold text-white mb-6">
-              FemmeStyle
-            </h1>
-            <p className="text-sm font-light">Crafting luxury fashion with uncompromising attention to detail since 1995.</p>
-            <div className="flex space-x-4 mt-6">
-              <FaInstagram className="text-xl hover:text-white cursor-pointer transition" />
-              <FaTwitter className="text-xl hover:text-white cursor-pointer transition" />
-              <FaPinterest className="text-xl hover:text-white cursor-pointer transition" />
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">KnH Empire</h2>
+            <p className="text-lg font-light max-w-2xl mx-auto">Elegance in Every Stitch</p>
           </div>
-          {['Collections', 'Company', 'Client Care', 'Legal'].map((section) => (
-            <div key={section}>
-              <h3 className="text-white font-light mb-6 tracking-wide">{section}</h3>
-              <ul className="space-y-4">
-                {[1, 2, 3, 4].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm font-light hover:text-white transition">
-                      Link {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+              <h1 className="text-2xl font-bold text-white mb-6">
+                FemmeStyle
+              </h1>
+              <p className="text-sm font-light">Crafting luxury fashion with uncompromising attention to detail since 1995.</p>
+              <div className="flex space-x-4 mt-6">
+                <FaInstagram className="text-xl hover:text-white cursor-pointer transition" />
+                <FaTwitter className="text-xl hover:text-white cursor-pointer transition" />
+                <FaPinterest className="text-xl hover:text-white cursor-pointer transition" />
+              </div>
             </div>
-          ))}
+            {['Collections', 'Company', 'Client Care', 'Legal'].map((section) => (
+              <div key={section}>
+                <h3 className="text-white font-light mb-6 tracking-wide">{section}</h3>
+                <ul className="space-y-4">
+                  {[1, 2, 3, 4].map((item) => (
+                    <li key={item}>
+                      <a href="#" className="text-sm font-light hover:text-white transition">
+                        Link {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </footer>
 
