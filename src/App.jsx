@@ -18,11 +18,11 @@ function App() {
         <Routes>
         <Route path="/landing" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/navbar" element={<Navbar />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/add" element={<AddProduct />} />  
-          <Route path="/new" element={<NewLandingPage />} />  
+          <Route path="/" element={<NewLandingPage />} />  
         </Routes>
       </div>
     </Router>
