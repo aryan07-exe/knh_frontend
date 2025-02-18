@@ -8,9 +8,23 @@ import Navbar from "./components/Navbar";
 import AddProduct from "./components/AddProduct";
 import NewLandingPage from "./components/NewLandingPage";
 // Add a Home page if needed
+//const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000"; 
 
+
+  
 
 function App() {
+  // const [data, setData] = useState("");
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/api/hello")
+  //     .then(response => {
+  //       setData(response.data.message);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
   return (
     <Router>
       <div>
