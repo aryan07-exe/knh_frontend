@@ -1,8 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-//0const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
-
 const AddProduct = () => {
     const [product, setProduct] = useState({
         name: "",
@@ -26,6 +24,7 @@ const AddProduct = () => {
         formData.append("name", product.name);
         formData.append("price", product.price);
         formData.append("size", product.size);
+        formData.append("description", product.description);
         formData.append("image", product.image);
 
         try {
@@ -35,7 +34,7 @@ const AddProduct = () => {
             alert("Product added successfully!");
             console.log(res.data);
         } catch (error) {
-            console.error("Error adding product:", error.response.data);
+            console.error("Error adding product:", error.response?.data || error.message);
         }
     };
 
@@ -73,7 +72,15 @@ const AddProduct = () => {
                         className="w-full p-3 bg-gray-900 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
                     />
                 </div>
-                
+                <div className="mb-4">
+                    <textarea
+                        name="description"
+                        placeholder="Description"
+                        onChange={handleChange}
+                        required
+                        className="w-full p-3 bg-gray-900 text-white rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    />
+                </div>
                 <div className="mb-4">
                     <input
                         type="file"

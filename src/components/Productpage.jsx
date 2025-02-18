@@ -147,15 +147,19 @@ function ProductPage() {
                   <div className="flex justify-between items-center">
                     <p className="text-lg font-bold text-emerald-400">₹{product.price}</p>
                     <div className="flex gap-2">
-                      {product.size.map((size, index) => (
-                        <span 
-                          key={index}
-                          className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full"
-                        >
-                          {size}
-                        </span>
-                      ))}
-                    </div>
+  {product.size
+    ? product.size.split(",").map((size, index) => (
+        <span 
+          key={index}
+          className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full"
+        >
+          {size.trim()}
+        </span>
+      ))
+    : <span className="text-gray-400 text-xs">No size available</span>
+  }
+</div>
+
                   </div>
                 </div>
               </motion.div>
