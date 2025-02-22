@@ -63,9 +63,7 @@ function ProductPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white font-['Poppins']">
-      <div className="fixed top-0 w-full z-50">
-        <Navbar />
-      </div>
+    
 
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header Section */}
@@ -101,6 +99,7 @@ function ProductPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
           >
             {products.map((product) => (
+              console.log("Image URL:", product.image),
               <motion.div
                 key={product._id}
                 variants={itemVariants}
@@ -108,8 +107,7 @@ function ProductPage() {
               >
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img 
-                    src={product.image} 
-                    alt={product.name}
+                    src={`http://localhost:5000${product.image}`} alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -147,7 +145,16 @@ function ProductPage() {
                   <div className="flex justify-between items-center">
                     <p className="text-lg font-bold text-emerald-400">₹{product.price}</p>
                     <div className="flex gap-2">
-  {product.size
+                    {Array.isArray(product.size)
+  ? product.size.map((size, index) => (
+      <span 
+        key={index}
+        className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full"
+      >
+        {size}
+      </span>
+    ))
+  : typeof product.size === "string"
     ? product.size.split(",").map((size, index) => (
         <span 
           key={index}
@@ -157,7 +164,8 @@ function ProductPage() {
         </span>
       ))
     : <span className="text-gray-400 text-xs">No size available</span>
-  }
+}
+
 </div>
 
                   </div>

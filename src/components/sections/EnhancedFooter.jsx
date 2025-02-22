@@ -51,20 +51,7 @@ const EnhancedFooter = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-white font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray-400 mb-4">Subscribe to receive updates, access to exclusive deals, and more.</p>
-            <div className="flex flex-col space-y-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="bg-gray-800 border border-gray-700 px-4 py-2 rounded-full focus:outline-none focus:border-emerald-500 text-white"
-              />
-              <button className="bg-emerald-500 text-white px-6 py-2 rounded-full hover:bg-emerald-600 transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          
         </div>
 
         <div className="border-t border-gray-800 pt-8 mt-8">

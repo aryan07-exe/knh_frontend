@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from '../images/logo3.jpg';
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection, refs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const navItems = [
-    { name: 'New Arrivals', path: '/product' },
-    { name: 'Dresses', path: '/product?category=dresses' },
-    { name: 'Tops', path: '/product?category=tops' },
-    { name: 'Accessories', path: '/product?category=accessories' },
-    { name: 'About', path: '/about' }
+    
+    { name: 'Bridal', ref: refs.bridalRef },
+    { name: 'Custom Designs', ref: refs.customRef },
+    { name: 'Categories', ref: refs.featuredRef },
+    { name: 'Offers', ref: refs.specialRef },
+    { name: 'Booking', ref: refs.bookingRef },
+   
   ];
 
   return (
@@ -31,15 +33,13 @@ const Navbar = () => {
               <motion.div
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
-                className="relative group"
+                className="relative group cursor-pointer"
+                onClick={() => scrollToSection(item.ref)}
               >
-                <Link
-                  to={item.path}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
+                <span className="text-gray-300 hover:text-white transition-colors">
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"/>
-                </Link>
+                </span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"/>
               </motion.div>
             ))}
           </div>
@@ -84,14 +84,16 @@ const Navbar = () => {
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
-                <Link
+                <span
                   key={item.name}
-                  to={item.path}
-                  className="block text-gray-300 hover:text-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="block text-gray-300 hover:text-white transition-colors cursor-pointer"
+                  onClick={() => {
+                    scrollToSection(item.ref);
+                    setIsMenuOpen(false);
+                  }}
                 >
                   {item.name}
-                </Link>
+                </span>
               ))}
               <div className="pt-4 space-y-4">
                 <button 

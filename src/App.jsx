@@ -4,7 +4,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Landing from "./components/LandingPage";
 import ProductPage from "./components/Productpage";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NewHero";
 import AddProduct from "./components/AddProduct";
 import NewLandingPage from "./components/NewLandingPage";
 // Add a Home page if needed

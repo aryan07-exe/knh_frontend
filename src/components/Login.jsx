@@ -21,7 +21,7 @@ function Login() {
       if (response.ok) {
         alert("Login successful!");
         localStorage.setItem("token", data.token);
-        navigate("/landing");
+        navigate("/");
       } else {
         alert(data.error || "Login failed.");
       }
