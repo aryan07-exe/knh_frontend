@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 //import "./Signup.css"; // Import the CSS file
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL =import.meta.env.VITE_API_URL;
 
 function Signup() {
   const [email, setEmail] = useState("");

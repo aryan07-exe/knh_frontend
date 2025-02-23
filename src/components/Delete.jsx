@@ -3,7 +3,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 const ProductList = () => {
     const [products, setProducts] = useState([]);
 

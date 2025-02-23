@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { FaShoppingBag, FaHeart, FaRegHeart } from "react-icons/fa";
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 function ProductPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
