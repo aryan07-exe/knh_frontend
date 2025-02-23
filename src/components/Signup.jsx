@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-
+import React, { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 //import "./Signup.css"; // Import the CSS file
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ function Signup() {
       const data = await response.json();
       if (response.ok) {
         alert("Signup successful! You can now login.");
+        navigate("/");
       } else {
         alert(data.error || "Signup failed.");
       }
