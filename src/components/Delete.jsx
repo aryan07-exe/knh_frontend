@@ -3,12 +3,13 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 const ProductList = () => {
     const [products, setProducts] = useState([]);
 
     // Fetch products from backend
     useEffect(() => {
-        axios.get("http://localhost:5000/api/products")
+        axios.get(`${API_BASE_URL}/api/products`)
             .then(res => setProducts(res.data))
             .catch(err => console.log(err));
     }, []);
@@ -17,7 +18,7 @@ const ProductList = () => {
     const deleteProduct = async (id) => {
         if (!window.confirm("Are you sure you want to delete this product?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/products/delete/${id}`);
+            await axios.delete(`${API_BASE_URL}/api/products/delete/${id}`);
             setProducts(products.filter(product => product._id !== id)); // Update UI
         } catch (error) {
             alert("Error deleting product");

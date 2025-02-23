@@ -8,6 +8,8 @@ import SpecialOffers from "./sections/SpecialOffers";
 import BookingSection from "./sections/BookingSection";
 import EnhancedFooter from "./sections/EnhancedFooter";
 
+
+
 const NewLandingPage = () => {
   // Creating references for each section
   const heroRef = useRef(null);

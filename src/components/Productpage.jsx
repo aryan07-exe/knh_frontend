@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { FaShoppingBag, FaHeart, FaRegHeart } from "react-icons/fa";
-
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 function ProductPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,8 +17,8 @@ function ProductPage() {
   useEffect(() => {
     setLoading(true);
     const url = category 
-      ? `http://localhost:5000/api/products?category=${category}`
-      : "http://localhost:5000/api/products";
+      ? `${API_BASE_URL}/api/products?category=${category}`
+      : `${API_BASE_URL}/api/products`;
       
     axios.get(url)
       .then((response) => {
