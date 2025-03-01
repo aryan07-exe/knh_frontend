@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import hero2 from '../../images/hero7.jpg';
-
+import hero1 from '../../images/wedding8.jpg';
 const SpecialOffers = () => {
   return (
     <section className="py-24 bg-emerald-950 relative overflow-hidden">
@@ -14,7 +14,7 @@ const SpecialOffers = () => {
               <span className="text-emerald-300 text-sm tracking-widest uppercase mb-4 block">Limited Time Offer</span>
               <h2 className="text-4xl font-bold text-white mb-6">Special Bridal Collection</h2>
               <p className="text-emerald-100 mb-8">
-                Book your consultation now and get a complimentary accessory set with your bridal dress purchase.
+              Book your consultation now and get a complimentary accessory set with your bridal dress purchase.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -24,13 +24,17 @@ const SpecialOffers = () => {
                 <FaArrowRight className="ml-2" />
               </motion.button>
             </div>
-            <div className="relative">
+            <div className="relative flex gap-0">
               <img 
                 src={hero2} 
                 alt="Special Offer"
-                className="rounded-xl shadow-2xl transform rotate-3"
+                className="rounded-xl shadow-2xl transform rotate-2"
               />
-              
+              <img 
+                src={hero1} 
+                alt="Special Offer"
+                className="rounded-xl shadow-2xl transform rotate-6"
+              />
             </div>
           </div>
         </div>

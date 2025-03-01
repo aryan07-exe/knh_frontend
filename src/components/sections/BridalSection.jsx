@@ -17,9 +17,9 @@ const BridalSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="text-emerald-400 text-sm tracking-widest uppercase mb-4 block">Bridal Collection</span>
-            <h2 className="text-5xl font-bold text-white mb-8 leading-tight">Modern-Day Bridal Dreams</h2>
+            <h2 className="text-5xl font-bold text-white mb-8 leading-tight">Enriched culture</h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-12">
-              Walk down the aisle in a masterpiece that reflects your unique style. Our modern bridal collection combines traditional elegance with contemporary design, creating timeless pieces for your special day.
+            Every culture is enriched with its own unique features so are the custom pieces made for our brides. These pieces combines traditional designs, elegence alongside our commitment to comfort, creating a timeless piece for your special day!
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

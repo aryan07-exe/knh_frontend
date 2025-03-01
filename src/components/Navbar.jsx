@@ -118,7 +118,7 @@ const Navbar = ({ scrollToSection, refs }) => {
                   className="px-6 py-2 bg-emerald-500 text-white hover:bg-emerald-600 transition-colors rounded-lg"
                   onClick={() => navigate("/signup")}
                 >
-                  INQUIRE NOW
+                  Log In
                 </motion.button>
               </>
             )}

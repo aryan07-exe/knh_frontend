@@ -28,7 +28,8 @@ const HeroSection = () => {
               Elegance in <span className="text-emerald-400">Every Stitch</span>
             </h1>
             <p className="text-gray-300 text-lg sm:text-xl mb-8 sm:mb-12 leading-relaxed">
-              Where luxury meets sustainability. Experience the perfect blend of contemporary design and timeless sophistication.
+            Where luxury and elegance meets comfort. Experience the perfect blend of contemporary designs, elegant fit and comfort.
+
             </p>
             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <motion.button

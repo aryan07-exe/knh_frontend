@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 const BookingSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-32 bg-emerald-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
@@ -18,6 +19,7 @@ const BookingSection = () => {
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
+            onClick={() => navigate("/inq")}
             className="bg-white text-emerald-900 px-10 py-4 rounded-full hover:bg-gray-100 transition-all shadow-lg"
           >
             Schedule Appointment

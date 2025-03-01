@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Delete from "./components/Delete";
@@ -8,37 +8,29 @@ import Admin from "./components/Admin";
 import AddProduct from "./components/AddProduct";
 import NewLandingPage from "./components/NewLandingPage";
 import Login from "./components/Login";
-// Add a Home page if needed
-//const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000"; 
+import Inq from "./components/Inquiry";
 
-
-  
 
 function App() {
-  // const [data, setData] = useState("");
+  const [showForm, setShowForm] = useState(false);
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/api/hello")
-  //     .then(response => {
-  //       setData(response.data.message);
-  //     })
-  //     .catch(error => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  // }, []);
   return (
     <Router>
       <div>
-      
+        {/* Conditionally Render Consultation Form */}
+        {showForm && <ConsultationForm setShowForm={setShowForm} />}
+
         <Routes>
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/del" element={<Delete />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/inq" element={<Inq />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/add" element={<AddProduct />} />  
-          <Route path="/" element={<NewLandingPage />} />  
+          {/* Pass setShowForm to NewLandingPage */}
+          <Route path="/" element={<NewLandingPage setShowForm={setShowForm} />} />  
         </Routes>
       </div>
     </Router>
@@ -46,4 +38,3 @@ function App() {
 }
 
 export default App;
-

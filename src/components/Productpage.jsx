@@ -17,8 +17,8 @@ function ProductPage() {
   useEffect(() => {
     setLoading(true);
     const url = category 
-      ? `${API_BASE_URL}/api/products?category=${category}`
-      : `${API_BASE_URL}/api/products`;
+      ? "http://localhost:5000/api/products?category=${category}"
+      : "http://localhost:5000/api/products";
       
     axios.get(url)
       .then((response) => {

@@ -85,10 +85,12 @@ const CustomDesignsSection = () => {
             Bespoke Fashion
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-            Custom-Made <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Excellence</span>
+            Custom-Made <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Elegance</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-            Your vision, our expertise. Experience the luxury of perfectly tailored fashion.
+          Your vision, our expertise. Experience the luxury of a perfectly tailored outfit for any occasion 
+
+
           </p>
         </motion.div>
 

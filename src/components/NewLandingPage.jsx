@@ -28,6 +28,7 @@ const NewLandingPage = () => {
   return (
     <div className="bg-black min-h-screen font-['Poppins']">
       <Navbar 
+      
         scrollToSection={scrollToSection}
         refs={{ heroRef, bridalRef, customRef, featuredRef, specialRef, bookingRef, footerRef }}
       />

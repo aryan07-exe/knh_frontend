@@ -1,10 +1,7 @@
 import React from "react";
-import { FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa";
+import { FaInstagram,FaTiktok,FaFacebook } from "react-icons/fa";
 
 const EnhancedFooter = () => {
-  const quickLinks = ['New Arrivals', 'Bridal Collection', 'Custom Designs', 'Accessories'];
-  const customerCare = ['Contact Us', 'Book Appointment', 'Shipping Info', 'Returns', 'Size Guide'];
-
   return (
     <footer className="bg-black text-gray-400 pt-20 pb-10 px-4 border-t border-gray-800">
       <div className="max-w-7xl mx-auto">
@@ -13,45 +10,71 @@ const EnhancedFooter = () => {
             <h2 className="text-3xl font-bold text-white">KnH Empire</h2>
             <p className="text-gray-400">Elegance in Every Stitch</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
+              <a href="https://www.instagram.com/knhempire?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-gray-400 hover:text-emerald-400 transition-colors">
                 <FaInstagram size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                <FaTwitter size={24} />
+              <a href="https://m.facebook.com/knhempire/" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                <FaFacebook size={24} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                <FaPinterest size={24} />
+              <a href="https://www.tiktok.com/@knhempire" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                <FaTiktok size={24} />
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              {quickLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  New Arrivals
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Bridal Collection
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
+                  Custom Designs
+                </a>
+              </li>
+              
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-semibold mb-6">Customer Care</h3>
             <ul className="space-y-4">
-              {customerCare.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+            <li className="space-y-2"> 
+  <a className="text-gray-400 hover:text-emerald-400 transition-colors text-lg font-semibold">
+    Email:
+  </a>
+  <br />
+  <a className="text-white hover:text-emerald-400 transition-colors">  
+    knhempire@gmail.com
+  </a>
+
+  <br /><br /> {/* Adds space between Email and Phone sections */}
+
+  <a className="text-gray-400 hover:text-emerald-400 transition-colors text-lg font-semibold">
+    WhatsApp:
+  </a>
+  <br />
+  <a className="text-white hover:text-emerald-400 transition-colors">
+    +234-8174466380
+  </a>
+</li>
+
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-lg">
+                  Book Appointment
+                </a>
+              </li>
+            
             </ul>
           </div>
-
-          
         </div>
 
         <div className="border-t border-gray-800 pt-8 mt-8">
@@ -71,4 +94,4 @@ const EnhancedFooter = () => {
   );
 };
 
-export default EnhancedFooter; 
+export default EnhancedFooter;
