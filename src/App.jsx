@@ -9,16 +9,16 @@ import AddProduct from "./components/AddProduct";
 import NewLandingPage from "./components/NewLandingPage";
 import Login from "./components/Login";
 import Inq from "./components/Inquiry";
+import Nav from "./components/Normalnav";
 
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
+ 
 
   return (
     <Router>
       <div>
-        {/* Conditionally Render Consultation Form */}
-        {showForm && <ConsultationForm setShowForm={setShowForm} />}
+    
 
         <Routes>
           <Route path="/landing" element={<Landing />} />
@@ -30,7 +30,8 @@ function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/add" element={<AddProduct />} />  
           {/* Pass setShowForm to NewLandingPage */}
-          <Route path="/" element={<NewLandingPage setShowForm={setShowForm} />} />  
+          <Route path="/" element={<NewLandingPage  />} />  
+          <Route path="/nav" element={<Nav  />} />  
         </Routes>
       </div>
     </Router>
