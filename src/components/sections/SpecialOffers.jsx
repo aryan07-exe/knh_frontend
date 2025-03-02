@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import hero2 from '../../images/hero7.jpg';
 import hero1 from '../../images/wedding8.jpg';
-
+import { useNavigate } from "react-router-dom";
 
 const SpecialOffers = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-24 bg-emerald-950 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
@@ -21,7 +22,8 @@ const SpecialOffers = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="bg-white text-emerald-900 px-8 py-3 rounded-full hover:bg-emerald-50 transition-all shadow-lg inline-flex items-center"
-              >
+            
+                onClick={() => navigate("/inq")}           >
                 Claim Offer
                 <FaArrowRight className="ml-2" />
               </motion.button>

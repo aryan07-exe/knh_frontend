@@ -5,9 +5,10 @@ import bridalImage from '../../images/wedding2.jpg';
 import eveningImage from '../../images/product7.jpg';
 import traditionalImage from '../../images/wedding8.jpg';
 import accessoriesImage from '../../images/product3.jpg';
-
+import { useNavigate } from "react-router-dom";
 const API_BASE_URL =import.meta.env.VITE_API_URL;
 const FeaturedCategories = () => {
+  const navigate = useNavigate();
   const categories = [
     {
       name: 'Bridal Wear',
@@ -95,12 +96,14 @@ const FeaturedCategories = () => {
               variants={itemVariants}
               whileHover={{ y: -10 }}
               className="relative group cursor-pointer"
+              onClick={() => navigate("/product")}
             >
-              <div className="relative overflow-hidden rounded-xl aspect-[3/4] bg-gray-800">
+              <div className="relative overflow-hidden rounded-xl aspect-[3/4] bg-gray-800 ">
                 <img 
                   src={category.image} 
                   alt={category.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onClick={() => navigate("/product")}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300">
                   <div className="absolute bottom-6 left-6 right-6">
@@ -114,6 +117,7 @@ const FeaturedCategories = () => {
                     <motion.button
                       whileHover={{ x: 5 }}
                       className="text-emerald-400 text-sm font-medium inline-flex items-center group/btn"
+                      onClick={() => navigate("/product")}
                     >
                       Shop Now
                       <FaArrowRight className="ml-2 text-xs transition-transform group-hover/btn:translate-x-1" />

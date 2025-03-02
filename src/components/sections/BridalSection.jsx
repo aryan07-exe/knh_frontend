@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import hero2 from '../../images/wedding5.jpg';
 import hero3 from '../../images/wedding7.jpg';
+import { useNavigate } from "react-router-dom";
 
 const BridalSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-32 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
@@ -24,7 +26,8 @@ const BridalSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               className="bg-white text-black px-10 py-4 rounded-full hover:bg-gray-100 transition-all flex items-center group w-fit"
-            >
+              onClick={() => navigate("/product")}
+           >
               View Bridal Collection
               <FaArrowRight className="ml-2 transform transition-transform group-hover:translate-x-2" />
             </motion.button>
