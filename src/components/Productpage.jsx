@@ -18,7 +18,7 @@ const ProductPage = () => {
     setLoading(true);
     const url = category
       ? `${API_BASE_URL}/api/products?category=${category}`
-      : " ${API_BASE_URL}/api/products";
+      : `${API_BASE_URL}/api/products`;
 
     axios
       .get(url)
