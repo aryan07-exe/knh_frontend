@@ -4,8 +4,10 @@ import { FaArrowRight, FaHeart, FaRegHeart, FaShoppingBag } from "react-icons/fa
 import collection1 from '../../images/product7.jpg';
 import collection2 from '../../images/wedding2.jpg';
 import collection3 from '../../images/wedding3.jpg';
+import { useNavigate } from "react-router-dom";
 
 const CustomDesignsSection = () => {
+  const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [likedItems, setLikedItems] = useState([]);
 
@@ -130,6 +132,7 @@ const CustomDesignsSection = () => {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="w-full bg-emerald-500 text-white px-6 py-3 rounded-lg text-sm hover:bg-emerald-600 transition-colors shadow-lg inline-flex items-center justify-center group"
+                          onClick={() => navigate("/product")}
                         >
                           <FaShoppingBag className="mr-2" />
                           Explore Design

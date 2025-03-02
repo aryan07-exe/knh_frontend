@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import hero2 from '../../images/hero7.jpg';
 import hero1 from '../../images/wedding8.jpg';
+
+
 const SpecialOffers = () => {
   return (
     <section className="py-24 bg-emerald-950 relative overflow-hidden">

@@ -6,6 +6,7 @@ import eveningImage from '../../images/product7.jpg';
 import traditionalImage from '../../images/wedding8.jpg';
 import accessoriesImage from '../../images/product3.jpg';
 
+const API_BASE_URL =import.meta.env.VITE_API_URL;
 const FeaturedCategories = () => {
   const categories = [
     {

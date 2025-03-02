@@ -24,7 +24,7 @@ function App() {
           <Route path="/landing" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/del" element={<Delete />} />
+          <Route path="/delete" element={<Delete />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/inq" element={<Inq />} />
           <Route path="/product" element={<ProductPage />} />
