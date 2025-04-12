@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import Navbar from "./Normalnav"; // Import the Navbar component
 
 const API_BASE_URL =import.meta.env.VITE_API_URL;
 const ProductPage = () => {
@@ -64,6 +65,7 @@ const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white font-['Poppins']">
+      <Navbar />
       <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 relative">
